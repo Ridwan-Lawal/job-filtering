@@ -5,3 +5,7 @@
 .skill {
   @apply bg-lightGrayishCyan text-desaturatedDarkCyan font-bold px-3 py-1 rounded-md;
 }
+
+.skill__select {
+  @apply bg-lightGrayishCyan text-desaturatedDarkCyan font-bold px-3 py-1 text-lg;
+}
