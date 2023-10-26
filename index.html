@@ -14,17 +14,84 @@
 
     <!-- style -->
     <link href="/dist/output.css" rel="stylesheet" />
+    <style>
+      .slide-out {
+        animation: slideOut 0.5s ease forwards;
+      }
+
+      @keyframes slideOut {
+        0% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      }
+
+      @keyframes slide-in {
+        0% {
+          transform: translateX(-100%); /* Start position, fully off the left */
+        }
+        100% {
+          transform: translateX(0); /* End position, fully on the screen */
+        }
+      }
+
+      .slide-in-element {
+        animation: slide-in 0.5s ease-out; /* 1s duration with ease-out timing function */
+      }
+
+      .box {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-lightGrayishCyan">
     <div class="containers font-spartan">
       <header class="bg-desaturatedDarkCyan">
         <div
           class="bg-header-mobile h-[24vh] md:h-[21vh] md:bg-header-desktop bg-no-repeat bg-cover"
         ></div>
       </header>
+
       <!-- main -->
-      <main class="h-[76vh] md:h-[79vh] py-10 bg-lightGrayishCyan">
-        <!-- skill section -->
+      <main class="h-full px-7 py-14">
+        <div class="md:max-w-6xl mx-auto">
+          <!-- ==================== main beginning -==========  -->
+          <!-- ========selected section========== -->
+          <div
+            class="selection__section flex justify-center -mt-28 mb-14 hidden"
+          >
+            <div
+              class="p-6 w-full mx-auto flex justify-between items-center shadow-lg rounded-md border-black bg-white"
+            >
+              <!-- skills selected -->
+              <div class="flex skills__selected flex-wrap gap-7">
+                <!-- skill 1 -->
+                <!-- <section class="flex rounded-md w-fit overflow-hidden">
+                  <button class="skill__select">Frontend</button>
+                  <div class="bg-desaturatedDarkCyan w-fit pt-2.5 px-2">
+                    <img src="./images/icon-remove.svg" alt="" />
+                  </div>
+                </section> -->
+              </div>
+              <!-- clear -->
+              <p
+                class="btn-clear font-bold text-darkGrayishCyan cursor-pointer hover:text-desaturatedDarkCyan transition-colors"
+              >
+                Clear
+              </p>
+            </div>
+          </div>
+
+          <!-- ============== PROFILE ================ -->
+
+          <div class="user__profiles space-y-20"></div>
+        </div>
       </main>
     </div>
 
